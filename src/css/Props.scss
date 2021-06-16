@@ -1,0 +1,20 @@
+.abs{
+    position: absolute;
+    &.fill{
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+    }
+}
+
+.abc{
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.s30{
+    font-size: 30px;
+    
+}
