@@ -1,7 +1,11 @@
-import react from 'react';
+import React,{useEffect}from 'react';
 import {connect} from 'react-redux';
+import {
+    BrowserRouter
+} from 'react-router-dom';
 
 import './css/App.scss';
+import Messager from './pages/Messager';
 // pages to screens
 import Splash from './pages/Splash';
 
@@ -9,9 +13,20 @@ import Splash from './pages/Splash';
 
 function ZuzApp(props){
 
-    const {loaded} = props;
+    const {loaded,setState} = props;
+    useEffect(()=>{
+        setTimeout(()=>{
+            setState(true);
+
+        },1000)
+    },[]);
     return(
-       loaded? <div>App Is loaded</div>: <Splash/>
+        <BrowserRouter>
+        {loaded?
+         <Messager/>
+         : <Splash/>}
+        </BrowserRouter>
+       
     )
 
 }

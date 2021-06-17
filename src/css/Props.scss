@@ -14,7 +14,23 @@
     transform: translate(-50%,-50%);
 }
 
+.fixed{
+    position: fixed;
+    &.fill{
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+    }
+}
+
+.flex{
+    display: flex;
+    flex-direction: row;
+       
+}
 .s30{
     font-size: 30px;
     
 }
+
