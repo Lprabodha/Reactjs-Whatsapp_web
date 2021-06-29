@@ -1,37 +1,154 @@
-
 @import "./Props.scss";
 
-body{
-    background: #d5dbdb;
+.font{
+  font-family: 'Open Sans', sans-serif;
 }
 
-.splash{
-    width: 400px;
-    height: 400px;
+body {
+  background: #d5dbdb;
+  font-family: 'Open Sans', sans-serif;
 }
 
-.green-belt{
-    background: #009788;
-    height: 15vh;
-
+.splash {
+  width: 400px;
+  height: 400px;
 }
 
-.messager{
-    background: #fff;
-    top: 20px;
-    right: 40px;
-    bottom: 20px;
-    left: 40px;
-    border-radius: 3px;
-    // box-shadow: 0px 0px 10px #ccc;
+.green-belt {
+  background: #009788;
+  height: 15vh;
+}
 
+.messager {
+  background: #fff;
+  top: 20px;
+  right: 40px;
+  bottom: 20px;
+  left: 40px;
+  border-radius: 3px;
+  // box-shadow: 0px 0px 10px #ccc;
 
-    .inbox{
-        width: 300px;
-        border-right: 1px #ddd solid;
-    }
-    .chatbox{
+  .inbox {
+    width: 350px;
+    border-right: 1px #ddd solid;
+
+    // user box header
+    .userbox {
+      border-radius: 3px 0px 0px 0px;
+      background: #f3f3f3;
+
+      .you {
         flex: 1;
+        padding-left: 12px;
+        .user {
+          width: 35px;
+          height: 35px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+          }
+        }
+      }
+      .actions {
+        flex: 1;
+        justify-content: flex-end;
+        padding-right: 5px;
+        button {
+          width: 50px;
+          height: 50px;
+          border: 0px;
+          background: rgba(204, 204, 204, 0);
+          margin-left: 1px;
+          color: #888;
+        }
+      }
     }
-  
+
+    // serachbOX
+    .search {
+      border-top: 1px #ddd solid;
+      border-bottom: 1px #ddd solid;
+      padding: 7px 15px;
+      .sbox {
+        background: #fff;
+        border: 1px #eaeaea solid;
+        flex: 1;
+        border-radius: 5px;
+        overflow: hidden;
+        button {
+          width: 40px;
+          border: 0px;
+          background: #fff;
+          padding: 5px;
+          font-size: 22px;
+          color: #888;
+          &:hover{
+            color: #222;
+          }
+        }
+        input {
+          flex: 1;
+          border: 0px;
+        }
+      }
+    }
+
+    //conversation
+
+    .conv-list{
+      overflow-x: hidden;
+      overflow-y: auto;
+      flex: 1;
+      height: calc(100vh - 140px);
+    }
+    .conversation{
+      padding: 5px 10px;
+      .you {
+       width: 50px;
+       
+        .user {
+          width: 35px;
+          height: 35px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+          }
+        }
+      }
+      .meta{
+        flex: 1;
+        border-bottom: 1px #f1f1f1 solid;
+        padding: 0px 0px 10px 0px;
+        .info{
+          flex: 1;
+
+        }
+        .name{}
+        .last-msg{}
+      }
+
+      .extra{
+        .stamp{
+
+        }
+      .badge{
+        background: #2fc32f;
+        max-width: 32px;
+        text-align: center;
+        font-size: 12px;
+        border-radius: 40px;
+        padding: 0px 3px;
+        margin-top: 5px;
+      }
+      }
+
+    }
+  }
+  .chatbox {
+    flex: 1;
+  }
 }
