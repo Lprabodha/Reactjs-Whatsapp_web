@@ -1,12 +1,12 @@
 @import "./Props.scss";
 
-.font{
-  font-family: 'Open Sans', sans-serif;
+.font {
+  font-family: "Open Sans", sans-serif;
 }
 
 body {
   background: #d5dbdb;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .splash {
@@ -29,7 +29,7 @@ body {
   // box-shadow: 0px 0px 10px #ccc;
 
   .inbox {
-    width: 350px;
+    width: 375px;
     border-right: 1px #ddd solid;
 
     // user box header
@@ -84,7 +84,7 @@ body {
           padding: 5px;
           font-size: 22px;
           color: #888;
-          &:hover{
+          &:hover {
             color: #222;
           }
         }
@@ -97,17 +97,17 @@ body {
 
     //conversation
 
-    .conv-list{
+    .conv-list {
       overflow-x: hidden;
       overflow-y: auto;
       flex: 1;
       height: calc(100vh - 140px);
     }
-    .conversation{
+    .conversation {
       padding: 5px 10px;
       .you {
-       width: 50px;
-       
+        width: 50px;
+
         .user {
           width: 35px;
           height: 35px;
@@ -119,36 +119,172 @@ body {
           }
         }
       }
-      .meta{
+      .meta {
         flex: 1;
         border-bottom: 1px #f1f1f1 solid;
         padding: 0px 0px 10px 0px;
-        .info{
+        .info {
           flex: 1;
-
         }
-        .name{}
-        .last-msg{}
-      }
-
-      .extra{
-        .stamp{
-
+        .name {
         }
-      .badge{
-        background: #2fc32f;
-        max-width: 32px;
-        text-align: center;
-        font-size: 12px;
-        border-radius: 40px;
-        padding: 0px 3px;
-        margin-top: 5px;
-      }
+        .last-msg {
+        }
       }
 
+      .extra {
+        .stamp {
+        }
+        .badge {
+          background: #2fc32f;
+          max-width: 32px;
+          text-align: center;
+          font-size: 12px;
+          border-radius: 40px;
+          padding: 0px 3px;
+          margin-top: 5px;
+        }
+      }
     }
   }
   .chatbox {
     flex: 1;
+
+    // chathead
+    .chathead {
+      border-radius: 3px 0px 0px 0px;
+      background: #f3f3f3;
+
+      .you {
+        flex: 1;
+        padding-left: 12px;
+        .user {
+          width: 35px;
+          height: 35px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+          }
+        }
+        .meta {
+          margin-left: 10px;
+        }
+      }
+      .actions {
+        flex: 1;
+        justify-content: flex-end;
+        padding-right: 5px;
+        button {
+          width: 50px;
+          height: 50px;
+          border: 0px;
+          background: rgba(204, 204, 204, 0);
+          margin-left: 1px;
+          color: #888;
+        }
+      }
+    }
+    //chat
+    .chat {
+      border-top: 1px #ddd solid;
+      border-bottom: 1px #ddd solid;
+      flex: 1;
+      background: #e4dbd4;
+      padding: 20px 30px;
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      .bubble {
+        flex: 1;
+        margin: 3px 0px;
+        .ballon {
+          background: #fff;
+          display: table;
+          padding: 7px 60px 7px 10px;
+          border-radius: 8px;
+          max-width: 75%;
+          .stamp {
+            bottom: 7px;
+            right: 7px;
+          }
+          &:before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #fff;
+            left: -10px;
+            bottom: 4px;
+            z-index: 1;
+            border-radius: 20px;
+          }
+          &:after {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #e4dbd4;
+            left: -15px;
+            bottom: 9px;
+            z-index: 1;
+            border-radius: 20px;
+          }
+        }
+        &.mine {
+          justify-content: flex-end;
+          .ballon{
+            background: #dffdbf;
+            &:before {
+              content: "";
+              position: absolute;
+              width: 15px;
+              height: 15px;
+              background: #dffdbf;
+              left: auto;
+              right: -10px;
+              bottom: 4px;
+              z-index: 1;
+              border-radius: 20px;
+            }
+            &:after {
+              content: "";
+              position: absolute;
+              width: 15px;
+              height: 15px;
+              background: #e4dbd4;
+              left: auto;
+              right: -15px;
+              bottom: 9px;
+              z-index: 1;
+              border-radius: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    .sendbox {
+      background: #f3f3f3;
+      padding: 8px;
+      button {
+        width: 40px;
+        height: 40px;
+        border: 0px;
+        background: rgba(0, 0, 0, 0);
+        color: #888;
+      }
+
+      .new-message {
+        flex: 1;
+        border: 0px;
+        margin: 0px 10px;
+        border-radius: 5px;
+        padding: 10px;
+        height: 40px;
+        resize: none;
+      }
+    }
   }
 }
