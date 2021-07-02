@@ -1,16 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
-function ChatHead() {
+function ChatHead(props) {
+  console.log(props);
+  const { user } = props;
+  const { ID, dp, name, status } = user;
   return (
     <div className={`chathead flex`}>
       <div className={`you rel flex aic`}>
         <Link className={`user`}>
-          <img src={`https://placeimg.com/50/50/people`} />
+          <img src={dp} />
         </Link>
         <div className={`meta`}>
-        <h2 className={`name s14`}>Prabath Udayanga</h2>
-          <h2 className={`status s12 c777 `}>Last online 7 minutes ago</h2>
+          <h2 className={`name s14`}>{name}</h2>
+          <h2 className={`status s12 c777 `}>{status}</h2>
         </div>
       </div>
       <div className={`actions rel flex aic`}>
@@ -21,4 +25,17 @@ function ChatHead() {
   );
 }
 
-export default ChatHead;
+const mapStateToProps = (state) => {
+  return {
+    ...state.Chat,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setState: (loaded) =>
+      dispatch({ type: "CHAT_STATE", state: { loaded: loaded } }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChatHead);

@@ -1,15 +1,46 @@
 import React from "react";
 
 function ChatBubble(props) {
+  const { dir, meta, user } = props;
+  const { ID, uid, text, media } = meta;
 
+  const { name } = user;
 
-  const {dir} = props;
+  const getMedia = () => {
+    if (media) {
+      const { type, src,poster } = media;
+    
+      return (
+        <div className={`media rel`}>
+          {type == "image" && (
+            <div
+              style={{
+                backgroundImage: `url(${src})`,
+              }}
+            />
+          )}
+          {type == "video" && (
+            <div
+              style={{
+                backgroundImage: `url(${poster})`,
+              }}
+            />
+          )}
+        </div>
+      );
+    }
+    return null;
+  };
+
   return (
-    <div className={`bubble flex  rel ${dir == 1 ? 'mine' : ''}`}>
+    <div className={`bubble flex  rel ${dir == 1 ? "mine" : ""}`}>
       <div className={`ballon rel`}>
-        <h2 className={`name s13 b`}>Prbath Udayanga</h2>
-        <p className={`text s13 `}>Quick brown fox  jumps over the lazy dog!</p>
-        <h2 className={`stamp  c777 s11 abs`}>10:53 AM</h2>
+        <h2 className={`name s13 b`}>{name}</h2>
+
+        {getMedia()}
+
+        {text && <p className={`text s13 `}>{text}</p>}
+        <h2 className={`stamp   s12 abs c${text ? "777" : "fff"}`}>10:53 AM</h2>
       </div>
     </div>
   );
