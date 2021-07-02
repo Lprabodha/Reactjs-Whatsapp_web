@@ -30,7 +30,10 @@ input {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
+.aby{
+  top: 50%;
+  transform: translateY(-50%);
+}
 .fixed {
   position: fixed;
   &.fill {
@@ -56,6 +59,14 @@ input {
     flex-direction: column !important;
   }
 }
+.grid{
+  display: grid;
+  
+}
+
+@mixin blur($amt:2) {
+  filter: blur($amt);
+}
 
 .s11{
   font-size: 11px;
@@ -75,6 +86,9 @@ input {
 }
 .s16 {
   font-size: 16px;
+}
+.s20{
+  font-size: 20px;
 }
 .s24 {
   font-size: 24px;

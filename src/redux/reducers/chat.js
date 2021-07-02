@@ -13,7 +13,33 @@ const initialState = {
       text: `Quick brown fox  jumps over the lazy dog!`,
       media: {
         type: `image`,
-        src: `https://placeimg.com/640/480/any`,
+        src: [`https://placeimg.com/640/480/any`],
+      },
+    },
+    {
+      ID: 6,
+      uid: 1,
+      text: null,
+      media: {
+        type: `image`,
+        src: [
+          `https://placeimg.com/640/480/any`,
+          `https://placeimg.com/640/480/any?id=xyz`,
+        ],
+      },
+    },
+    {
+      ID: 7,
+      uid: 1,
+      text: null,
+      media: {
+        type: `image`,
+        src: [
+          `https://placeimg.com/640/480/any?id=n`,
+          `https://placeimg.com/640/480/any?id=y`,
+          `https://placeimg.com/640/480/any?id=x`,
+          `https://placeimg.com/640/480/any?id=z`,
+        ],
       },
     },
     {
@@ -31,16 +57,26 @@ const initialState = {
       text: null,
       media: {
         type: `video`,
-        poster:`https://placeimg.com/640/480/any?v=true`,
+        poster: `https://placeimg.com/640/480/any?v=true`,
         src: `https://www.zuz.com.pk/video.mp4`,
       },
     },
     {
-        ID: 4,
-        uid: 1,
-        text: `Hi i am working fine what about you?`,
-        media: null,
-      }
+      ID: 5,
+      uid: 0,
+      text: "Here is the description of this video!",
+      media: {
+        type: `video`,
+        poster: `https://placeimg.com/640/480/any?v=true`,
+        src: `https://www.zuz.com.pk/video.mp4`,
+      },
+    },
+    {
+      ID: 4,
+      uid: 1,
+      text: `Hi i am working fine what about you?`,
+      media: null,
+    },
   ],
 };
 

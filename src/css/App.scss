@@ -1,4 +1,7 @@
+@import "./Colors.scss";
 @import "./Props.scss";
+
+$mbr: 4px;
 
 .font {
   font-family: "Open Sans", sans-serif;
@@ -25,7 +28,7 @@ body {
   right: 40px;
   bottom: 20px;
   left: 40px;
-  border-radius: 3px;
+  border-radius: $mbr;
   // box-shadow: 0px 0px 10px #ccc;
 
   .inbox {
@@ -34,7 +37,7 @@ body {
 
     // user box header
     .userbox {
-      border-radius: 3px 0px 0px 0px;
+      border-radius: $mbr 0px 0px 0px;
       background: #f3f3f3;
 
       .you {
@@ -152,7 +155,7 @@ body {
 
     // chathead
     .chathead {
-      border-radius: 3px 0px 0px 0px;
+      border-radius: 0px $mbr 0px 0px;
       background: #f3f3f3;
 
       .you {
@@ -202,41 +205,130 @@ body {
         .ballon {
           background: #fff;
           display: table;
-          padding: 4px 60px 4px 6px;
+          padding: 4px 6px;
           border-radius: 8px;
           max-width: 400px;
-         
 
           .stamp {
             bottom: 7px;
             right: 7px;
-            &.cfff{
+            &.cfff {
               text-shadow: 1px 1px 1px #000;
               bottom: 12px;
               right: 12px;
-              
             }
-         
           }
 
-          .text{
-            padding: 5px;
+          .text {
+            padding: 4px 0px;
+            margin-bottom: 20px;
           }
           .media {
             width: 350px;
             height: 220px;
-            overflow: hidden;
+
             border-radius: 5px;
             padding: 2px 0px;
             margin: 3px 0px;
+            &.audio {
+              height: auto !important;
+              .audioplayer {
+                .pp {
+                  border: 0px;
+                  width: 30px;
+                  height: 30px;
+                  border-radius: 30px;
+                  background: rgba(255, 255, 255, 0);
+                }
+                .ctrls {
+                  flex: 1;
+                  padding: 0px 10px;
+                  .slider {
+                    height: 4px;
+                    background: #ddd;
 
-            div {
+                    .knob {
+                      width: 12px;
+                      height: 12px;
+                      background: $themeColor;
+                      border-radius: 20px;
+                      left: 0px;
+                    }
+                  }
+                  .extra {
+                    bottom: -8px;
+                    left: 40px;
+                    right: 40px;
+
+                    .dur {
+                      flex: 1;
+                    }
+                    .stmp {
+                      flex: 1;
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                  }
+                }
+                .udp {
+                  width: 30px;
+                  height: 30px;
+                  background: #f1f1f1;
+                  border-radius: 50%;
+                  overflow: hidden;
+                  img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                  }
+                }
+              }
+            }
+
+            .poster {
               max-width: 100%;
               height: 100%;
               background-color: #f1f1f1;
               background-size: cover !important;
               border-radius: 5px;
               overflow: hidden;
+              &.grid {
+                column-gap: 2px;
+                row-gap: 2px;
+                &.c2 {
+                  grid-template-columns: 50% 50%;
+                  column-count: 2;
+                  .photo {
+                    border-radius: 0px;
+                  }
+                }
+                &.c4 {
+                  grid-template-columns: 50% 50%;
+                  column-count: 2;
+                  grid-template-rows: 50% 50%;
+                }
+              }
+              .photo {
+                max-width: 100%;
+                height: 100%;
+                background-color: #f1f1f1;
+                background-size: cover !important;
+                border-radius: 5px;
+              }
+            }
+
+            &.video {
+              .photo {
+                @include blur($amt: 2px);
+              }
+              .pp {
+                border: 2px #fff solid;
+                background: rgba(0, 0, 0, 0.5);
+                color: #fff;
+                width: 40px;
+                height: 40px;
+                border-radius: 20px;
+              }
             }
           }
           &:before {
@@ -266,7 +358,7 @@ body {
           justify-content: flex-end;
           .ballon {
             background: #dffdbf;
-            padding: 4px 6px ;
+            padding: 4px 6px;
             &:before {
               content: "";
               position: absolute;
@@ -298,7 +390,8 @@ body {
 
     .sendbox {
       background: #f3f3f3;
-      padding: 8px;
+      padding: 10px;
+      border-radius: 0px 0px $mbr 0px;
       button {
         width: 40px;
         height: 40px;
