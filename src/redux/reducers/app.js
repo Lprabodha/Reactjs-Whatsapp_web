@@ -2,6 +2,9 @@
 const initialState ={
     debug: true,
     loaded: true,
+    session:false,
+    codeSent: false
+
     }
 
     export default function (state = initialState, action){

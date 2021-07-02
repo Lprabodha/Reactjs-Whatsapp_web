@@ -11,10 +11,47 @@ body {
   background: #d5dbdb;
   font-family: "Open Sans", sans-serif;
 }
+.input {
+  border: 1px #ddd solid;
+  padding: 4px 8px;
+  height: 40px;
+}
+.button {
+  border: 0px;
+  background: $themeColor;
+  padding: 4px 10px;
+  height: 39px;
+}
 
 .splash {
   width: 400px;
   height: 400px;
+}
+
+.auth {
+  background: #fff;
+  width: 700px;
+  margin: 100px auto 50px auto;
+  padding: 50px;
+
+  .title {
+    margin-bottom: 7px;
+  }
+
+  .signin {
+    margin-top: 25px;
+    .input {
+      margin-right: 6px;
+      &.phone {
+        width: 300px;
+      }
+    }
+  }
+
+  .button {
+    margin-top: 20px;
+    padding: 3px 20px;
+  }
 }
 
 .green-belt {
