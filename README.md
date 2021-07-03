@@ -1,7 +1,7 @@
 # Getting Started with Create React Whatsapp Web
 
 
-# I will create Whatsapp web clone with ReactJS. 
+# I created Whatsapp web clone with ReactJS. 
 
 *Use icon is https://icomoon.io
 
