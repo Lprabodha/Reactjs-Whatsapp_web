@@ -1,9 +1,12 @@
 
 const initialState ={
     debug: true,
-    loaded: true,
+    loaded: false,
     session:false,
-    codeSent: false
+    codeSent: false,
+    confirmation: null,
+    user:null
+
 
     }
 

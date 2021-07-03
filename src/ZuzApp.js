@@ -1,6 +1,9 @@
 import React, { Fragment, useEffect } from "react";
 import { connect } from "react-redux";
 import { BrowserRouter, Route } from "react-router-dom";
+import firebase from "./firebase";
+
+import { getAuth, onAuthStateChanged } from "@firebase/auth";
 
 import "./css/App.scss";
 import Messager from "./pages/Messager";
@@ -12,9 +15,13 @@ import Splash from "./pages/Splash";
 function ZuzApp(props) {
   const { loaded, session, setState } = props;
   useEffect(() => {
-    setTimeout(() => {
-      setState(true);
-    }, 1000);
+    onAuthStateChanged(getAuth(), function (user) {
+      if (user) {
+        setState({ loaded: true, session: true, user: user });
+      } else {
+        setState({ loaded: true, session: false, user: null });
+      }
+    });
   }, []);
   return (
     <BrowserRouter>
